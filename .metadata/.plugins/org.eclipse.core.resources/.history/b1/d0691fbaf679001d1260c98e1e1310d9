@@ -1,0 +1,44 @@
+package com.magicbrickshomepage;
+
+import java.awt.Desktop.Action;
+import java.awt.event.ActionEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class prime {
+ public static void main(String args[]) throws InterruptedException{
+	 WebDriverManager.chromedriver().setup();
+     WebDriver driver=new ChromeDriver();
+     driver.get("https://www.magicbricks.com");
+     driver.manage().window().maximize();
+     Thread.sleep(1000);
+     //Actions act=new Actions(driver);
+     //WebElement ele1=driver.findElement(By.linkText("MB Prime"));
+     //act.moveToElement(ele1).perform();
+     //Thread.sleep(2000);
+     //driver.findElement(By.cssSelector("a.mb-prime-cta")).click();
+     //Thread.sleep(1000);
+     driver.findElement(By.xpath("//div[@id='tabRENT']")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.cssSelector("div#tabPG")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.cssSelector("div#tabPG")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.cssSelector("div#tabPLOT")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.cssSelector("div#tabCOMM")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.xpath("//div[@id='tabRENT']")).click();
+     Thread.sleep(1000);
+     WebElement ele1=driver.findElement(By.linkText("MB Prime"));
+     Actions act=new Actions(driver);
+     act.moveToElement(ele1);
+     
+ }
+}
